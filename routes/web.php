@@ -34,7 +34,7 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
         Route::get('/{user}/show', [UsersController::class, 'show'])->name('users.show');
         Route::get('/{user}/edit', [UsersController::class, 'edit'])->name('users.edit');
         Route::patch('/{user}/update', [UsersController::class, 'update'])->name('users.update');
-        Route::delete('/{user}/delete', [UsersController::class, 'destroy'])->name('users.destroy');
+        Route::get('/{user}/delete', [UsersController::class, 'destroy'])->name('users.destroy');
         Route::resource('roles', RolesController::class);
         Route::resource('permissions', PermissionsController::class);
     });

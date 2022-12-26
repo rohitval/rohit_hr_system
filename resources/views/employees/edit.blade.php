@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="bg-light p-4 rounded">
-        <h1>Update user</h1>
+        <h1>Update Employee</h1>
         <div class="lead">
 
         </div>
@@ -23,6 +23,7 @@
                         <span class="text-danger text-left">{{ $errors->first('name') }}</span>
                     @endif
                 </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input value="{{ $user->email }}"
@@ -34,17 +35,32 @@
                         <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                     @endif
                 </div>
+
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input value="{{ $user->username }}"
-                        type="text"
+                    <label for="email" class="form-label">Dob</label>
+                    <input value="{{ $user->dob }}"
+                        type="date"
                         class="form-control"
-                        name="username"
-                        placeholder="Username" required>
-                    @if ($errors->has('username'))
-                        <span class="text-danger text-left">{{ $errors->first('username') }}</span>
+                        name="dob"
+                        placeholder="Dob" required>
+                    @if ($errors->has('dob'))
+                        <span class="text-danger text-left">{{ $errors->first('dob') }}</span>
                     @endif
                 </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Position</label>
+                    <input value="{{ $user->position }}"
+                        type="text"
+                        class="form-control"
+                        name="position"
+                        placeholder="Position" required>
+                    @if ($errors->has('position'))
+                        <span class="text-danger text-left">{{ $errors->first('position') }}</span>
+                    @endif
+                </div>
+
+
                 <div class="mb-3">
                     <label for="role" class="form-label">Role</label>
                     <select class="form-control"

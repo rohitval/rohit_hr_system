@@ -9,6 +9,7 @@ use Session;
 use App\Models\User;
 use Hash;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class AuthController extends Controller
 {
@@ -50,7 +51,7 @@ class AuthController extends Controller
                         ->withSuccess('You have Successfully loggedin');
         }
 
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("users")->withSuccess('Oppes! You have entered invalid credentials');
     }
 
     /**
