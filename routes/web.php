@@ -26,6 +26,7 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 
     Route::get('admin-panel', [AuthController::class, 'dashboard']);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/{user}/invite_to_hubspot', [AuthController::class, 'Invite'])->name('Invite');
     /**
      * User Routes
      */

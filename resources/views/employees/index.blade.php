@@ -35,7 +35,16 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->dob }}</td>
                         <td>{{ $user->position }}</td>
-                        <td>{{ $user->is_synched_to_hubspot }}</td>
+                        <td>
+                            @if($user->is_synched_to_hubspot == 'No')
+
+                                <a href="{{ route('Invite', $user->id) }}" class="btn btn-dark btn-sm">Invite</a>
+
+                            @else
+                                {{ $user->is_synched_to_hubspot }}
+                            @endif
+
+                        </td>
                         <td>
                             @foreach($user->roles as $role)
                                 <span class="badge bg-primary">{{ $role->name }}</span>
@@ -44,7 +53,6 @@
                         {{-- <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-warning btn-sm">Show</a></td> --}}
                         <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-info btn-sm">Edit</a></td>
                         <td>
-
                             <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger btn-sm">Deactivate</a>
                         </td>
                     </tr>
